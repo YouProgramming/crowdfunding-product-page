@@ -1,0 +1,345 @@
+:root{
+    --Moderate-cyan: hsl(176, 50%, 47%);
+    --Dark-cyan: hsl(176, 72%, 28%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-gray: hsl(0, 0%, 48%);
+    --body-color: hsl(0deg 0% 94.9%);
+    /* Font weights */
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+}
+*{
+    font-family: "Commissioner", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+body{
+    width: 100%;
+    height: 100vh !important;
+    background-color: var(--body-color);
+}
+.overlay{
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: hsl(0deg 0% 0% / 32%);
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+}
+.overlay-element{
+    display: none;
+}
+p{
+    color: var(--Dark-gray) !important;
+}
+/* Start Header */
+header{
+    background-image: url(images/image-hero-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    padding: 15px 10px;
+    z-index: 1000;
+}
+@media (max-width: 991px){
+    header .navbar-collapse{
+        background-color: white !important;
+        border-radius: 5px !important;
+        margin-top: 20px !important;
+    }
+    header .navbar-nav li:not(li:last-child){
+        border-bottom: 1px solid hsl(0deg 0% 90.85%);
+        z-index: 100;
+    }
+    header .navbar-nav li a{
+        color: var(--Black) !important;
+    }
+}
+@media (max-width: 375px) {
+    header{
+        background-image: url(images/image-hero-mobile.jpg);
+    }
+}
+header .navbar{
+    z-index: 100;
+}
+header .navbar-toggler{
+    box-shadow: none !important;
+    border: none !important;
+}
+header .navbar-nav li a{
+    font-weight: var(--font-weight-500);
+}
+header .navbar-nav li a:hover{
+    color: var(--Moderate-cyan) !important;
+}
+/* End Header */
+/* Start Modal */
+.modal-element{
+    position: fixed;
+    z-index: 1000;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Responsive width */
+    width: auto; /* Allows it to shrink */
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;
+    height: 80%;
+}
+@media (max-width: 375px){
+    .modal-element{
+        width: 100% !important;
+    }
+}
+.modal-element .custom-radio{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.modal-element .custom-radio:hover .checkmarck,
+.modal-element .custom-radio:hover span:not(:first-child){
+    border-color: var(--Moderate-cyan);
+    color: var(--Moderate-cyan);
+}
+.modal-element .custom-radio input{
+    display: none;
+}
+.modal-element .custom-radio .checkmarck{
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--Dark-gray);
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+    background-color: white;
+}
+.modal-element .custom-radio input:checked + .checkmarck{
+    background-color: var(--Moderate-cyan); /* Color when checked */
+}
+.modal-element .custom-radio input:checked + .checkmarck::after{
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-element .option{
+    border: 1px solid hsl(0deg 0% 78.78%);
+    margin-bottom: 20px;
+}
+.modal-element .option .pledge{
+    border-top: 1px solid hsl(0deg 0% 78.78%);
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 767px) {
+    .modal-element .option .pledge{
+        padding: 0 !important;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column !important;
+        width: 102% !important;
+    }
+    .modal-element .option .pledge .amount div input{
+        width: 157px;
+    }
+}
+.modal-element option .pledge .amount{
+    align-items: center;
+}
+.modal-element .option .pledge .amount div input{
+    border: 1px solid hsl(0deg 0% 78.78%);
+    outline: none;
+    border-radius: 17px;
+}
+.modal-element .option .pledge .amount button{
+    color: white ;
+    background-color: var(--Moderate-cyan);
+    border: none;
+    margin-left: 10px;
+}
+.modal-element .option .custom-radio p span{
+    padding: 5px;
+}
+.modal-element .custom-radio span:nth-child(4){
+    color: var(--Moderate-cyan) !important;
+}
+/* End Modal */
+/* Start Thank You Message */
+.thank-you-message{
+    z-index: 1000;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Responsive width */
+    width: auto; /* Allows it to shrink */
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;
+    background-color: white;
+    border-radius: 8px;
+}
+.got-it-btn{
+    background-color: var(--Moderate-cyan);
+    color: white;
+    border: none;
+    border: none;
+}
+/* End Thank You Message */
+/* Start Main */
+main section{
+    border-radius: 5px;
+    transform: translateY(-62px);
+    width: 59% !important;
+    padding: 3rem;
+}
+@media (max-width: 375px) {
+    main section{
+        width: 87% !important;
+        padding: 32px 7px !important;
+    }
+
+}
+main section:first-child{
+    position: relative;
+}
+main section:first-child::before{
+    content: url(images/logo-mastercraft.svg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: -27px;
+    left: 45%;
+}
+main section:first-child h1, 
+main section:first-child p{
+    font-weight: var(--font-weight-700);
+}
+main section:first-child p{
+    color: var(--Dark-gray);
+}
+main section:first-child .buttons-container button{
+   background-color: var(--Moderate-cyan);
+   color: white !important;
+   border: none;
+   position: relative;
+}
+main section:first-child .buttons-container button:hover::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0deg 0% 0% / 32%);
+    border-radius: 40px;
+    top: 0;
+    left: 0;
+}
+main section:first-child .buttons-container .bookmark{
+    cursor: pointer;
+    background-color: var(--body-color);
+    position: relative;
+} 
+main section:first-child .buttons-container .bookmark:hover::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0deg 0% 0% / 32%);   
+    border-radius: 40px;
+}
+@media (max-width: 375px) {
+    main section:first-child .buttons-container .bookmark p{
+        display: none;
+    }
+    main section:first-child .buttons-container .bookmark{
+        background-color: transparent;
+        margin-left: 10px;
+    }
+    main section:first-child .buttons-container button{
+        width: 76%;
+    }
+}
+/* ----------------------------------- */
+
+main section:nth-child(2) .total-backed,
+main section:nth-child(2) .total-bakers{
+    border-right: 1px solid var(--Dark-gray) !important;
+}
+main section:nth-child(2) .progress,
+main section:nth-child(2) .progress .progress-bar{
+    border-radius: 17px;
+    transition: 0.3s;
+}
+main section:nth-child(2) .progress .progress-bar{
+    background-color: var(--Moderate-cyan) !important;
+    transition: 0.3s;
+}
+/* ----------------------------------- */
+main section:nth-child(3) .pledge-options .pledge-option{
+    border: 2px solid var(--body-color);
+    border-radius: 5px;
+}
+main section:nth-child(3) .pledge-options .pledge-option .select-reward{
+    border: none;
+    color: white;
+    font-weight: 700;
+    background-color: var(--Moderate-cyan);
+    font-size: 14px;
+}
+main section:nth-child(3) .pledge-options .pledge-option .select-reward.out-of-stock{
+    background-color: var(--body-color);
+}
+@media (max-width: 375px){
+    main section:nth-child(2){
+        text-align: center;
+        padding: 2rem !important;
+    }
+    main section:nth-child(2) .total-backed,
+    main section:nth-child(2) .total-bakers{
+        border-right-color: transparent !important;
+        border-bottom: 1px solid var(--Dark-gray) !important;
+    }
+}
+/* End Main */
+
+/* Custom Classe */
+.bookmarked{
+    background-color: hsl(0deg 0% 0% / 32%) !important;
+}
+.errorMessage{
+    position: relative;
+}
+.errorMessage input{
+    border-color: red !important;
+}
+.errorMessage::before{
+    content: "Please enter a valid pledge";
+    position: absolute;
+    color: red;
+    font-size: 0.7em;
+    bottom: -27px;
+    left: 17px;
+}
+.custom-color-Moderate-cyan{
+    color: var(--Moderate-cyan) !important;
+}
+.custom-color-Dark-gray{
+    vertical-align: var(--Dark-gray) !important;
+}
